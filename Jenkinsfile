@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent { docker { image 'maven:3.6.2' } }
+    agent any
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn clean install'
             }
         }
     }
